@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 26, 2014 at 01:10 PM
+-- Generation Time: Mar 26, 2014 at 01:13 PM
 -- Server version: 5.5.34
 -- PHP Version: 5.4.22
 
@@ -12,7 +12,7 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 --
--- Database: `blog`
+-- Database: `blog2`
 --
 
 -- --------------------------------------------------------
@@ -30,15 +30,16 @@ CREATE TABLE IF NOT EXISTS `post` (
   `user_id` int(10) unsigned NOT NULL,
   PRIMARY KEY (`post_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `post`
 --
 
 INSERT INTO `post` (`post_id`, `post_subject`, `post_text`, `post_created`, `user_id`) VALUES
-(1, 'Esimene postitus', 'Kõige algus', '2014-02-07 11:21:59', 1),
-(2, 'Teine postitus', 'See siin', '2014-02-07 11:23:39', 1);
+(1, 'Esimeseks', 'Julge pealehakkamine pidi pool võitu olema, teavad targemad rääkida.', '2014-03-26 10:30:22', 1),
+(2, 'Teiseks', 'Üheksa korda mõõda, üks kord lõika, peaks siin ka päris hästi sobima', '2014-03-26 10:32:06', 1),
+(3, 'Kolmandaks', 'Parem pool muna kui tühi koor kõlab siinkohal üsna julgustavalt', '2014-03-26 10:33:17', 1);
 
 -- --------------------------------------------------------
 
