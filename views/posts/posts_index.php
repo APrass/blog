@@ -5,7 +5,11 @@
         <div>
             <span class="badge badge-success">Posted <?=$post["post_created"]?></span>
             <div class="pull-right">
-                <span class="label">üks</span> <span class="label">kaks</span> <span class="label">kolm</span> <span class="label">neli</span></div>
+                <?foreach ($tags [$post	['post_id']] as $tag):?>
+                    <a href="<?=BASE_URL?>tags/view/<?=$tag?>"><span class = "label" style="background-color: #5bc0de"><?=$tag?></span></a>
+                <?endforeach?>
+               <!-- <span class="label">üks</span> <span class="label">kaks</span> --->
+            </div>
         </div>
         <hr>
     </div>
