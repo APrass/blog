@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 02, 2014 at 12:57 PM
+-- Generation Time: Apr 02, 2014 at 07:17 PM
 -- Server version: 5.5.34
 -- PHP Version: 5.4.22
 
@@ -51,9 +51,21 @@ DROP TABLE IF EXISTS `post_tags`;
 CREATE TABLE IF NOT EXISTS `post_tags` (
   `post_id` int(11) unsigned NOT NULL,
   `tag_id` int(11) unsigned NOT NULL,
-  PRIMARY KEY (`post_id`),
+  PRIMARY KEY (`post_id`,`tag_id`),
   KEY `tag_id` (`tag_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `post_tags`
+--
+
+INSERT INTO `post_tags` (`post_id`, `tag_id`) VALUES
+(1, 1),
+(2, 1),
+(1, 2),
+(1, 3),
+(3, 3),
+(3, 4);
 
 -- --------------------------------------------------------
 
