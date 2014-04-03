@@ -1,11 +1,4 @@
 
-/**
-* Created by PhpStorm.
-* User: Aya
-* Date: 27.03.14
-* Time: 8:50
-*/
-
 
 
 <div class="list-group">
