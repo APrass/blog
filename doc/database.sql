@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 04, 2014 at 09:23 PM
+-- Generation Time: Apr 04, 2014 at 09:48 PM
 -- Server version: 5.5.34
 -- PHP Version: 5.4.22
 
@@ -26,7 +26,15 @@ CREATE TABLE IF NOT EXISTS `comment` (
   `comment_id` int(10) NOT NULL AUTO_INCREMENT,
   `comment_text` text NOT NULL,
   PRIMARY KEY (`comment_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `comment`
+--
+
+INSERT INTO `comment` (`comment_id`, `comment_text`) VALUES
+(1, 'Usutav jutt'),
+(2, 'Jee-jee');
 
 -- --------------------------------------------------------
 
@@ -68,6 +76,14 @@ CREATE TABLE IF NOT EXISTS `post_comment` (
   PRIMARY KEY (`post_id`,`comment_id`),
   KEY `comment_id` (`comment_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `post_comment`
+--
+
+INSERT INTO `post_comment` (`post_id`, `comment_id`) VALUES
+(2, 1),
+(1, 2);
 
 -- --------------------------------------------------------
 
