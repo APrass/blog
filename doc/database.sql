@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 02, 2014 at 07:17 PM
+-- Generation Time: Apr 04, 2014 at 09:23 PM
 -- Server version: 5.5.34
 -- PHP Version: 5.4.22
 
@@ -14,6 +14,19 @@ SET time_zone = "+00:00";
 --
 -- Database: `blog`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comment`
+--
+
+DROP TABLE IF EXISTS `comment`;
+CREATE TABLE IF NOT EXISTS `comment` (
+  `comment_id` int(10) NOT NULL AUTO_INCREMENT,
+  `comment_text` text NOT NULL,
+  PRIMARY KEY (`comment_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -29,7 +42,8 @@ CREATE TABLE IF NOT EXISTS `post` (
   `post_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `user_id` int(10) unsigned NOT NULL,
   PRIMARY KEY (`post_id`),
-  KEY `user_id` (`user_id`)
+  KEY `user_id` (`user_id`),
+  KEY `post_id` (`post_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
@@ -40,6 +54,20 @@ INSERT INTO `post` (`post_id`, `post_subject`, `post_text`, `post_created`, `use
 (1, 'Esimeseks', 'Julge pealehakkamine pidi pool võitu olema, teavad targemad rääkida.', '2014-03-26 10:30:22', 1),
 (2, 'Teiseks', 'Üheksa korda mõõda, üks kord lõika, peaks siin ka päris hästi sobima', '2014-03-26 10:32:06', 1),
 (3, 'Kolmandaks', 'Parem pool muna kui tühi koor kõlab siinkohal üsna julgustavalt', '2014-03-26 10:33:17', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `post_comment`
+--
+
+DROP TABLE IF EXISTS `post_comment`;
+CREATE TABLE IF NOT EXISTS `post_comment` (
+  `post_id` int(11) unsigned NOT NULL,
+  `comment_id` int(11) NOT NULL,
+  PRIMARY KEY (`post_id`,`comment_id`),
+  KEY `comment_id` (`comment_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -121,6 +149,13 @@ INSERT INTO `user` (`user_id`, `username`, `password`, `deleted`) VALUES
 --
 ALTER TABLE `post`
   ADD CONSTRAINT `post_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
+
+--
+-- Constraints for table `post_comment`
+--
+ALTER TABLE `post_comment`
+  ADD CONSTRAINT `post_comment_ibfk_1` FOREIGN KEY (`comment_id`) REFERENCES `comment` (`comment_id`),
+  ADD CONSTRAINT `post_comment_ibfk_2` FOREIGN KEY (`post_id`) REFERENCES `post` (`post_id`);
 
 --
 -- Constraints for table `post_tags`
