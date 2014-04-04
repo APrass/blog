@@ -47,8 +47,8 @@
 			<ul class="nav navbar-nav">
                 <li <?=$controller == 'posts' ? 'class="active"' : ''?>><a href="<?=BASE_URL?>">Postitused</a></li>
                 <li <?=$controller == 'tags' ? 'class="active"' : ''?>><a href="<?=BASE_URL?>tags">Teemad</a></li>
-                <li <?=$controller == 'users' ? 'class="active"' : ''?>><a href="<?=BASE_URL?>users">Kasutajad</a></li>
-				<!-- <li><a href="#about">About</a></li>
+                <!-- <li <?=$controller == 'users' ? 'class="active"' : ''?>><a href="<?=BASE_URL?>users">Kasutajad</a></li>
+				<li><a href="#about">About</a></li>
 				<li><a href="#contact">Contact</a></li> -->
 				<!--<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 04, 2014 at 09:48 PM
+-- Generation Time: Apr 04, 2014 at 10:15 PM
 -- Server version: 5.5.34
 -- PHP Version: 5.4.22
 
@@ -154,7 +154,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`user_id`, `username`, `password`, `deleted`) VALUES
-(1, 'demo', 'demo', 0);
+(1, 'aya', 'demo', 0);
 
 --
 -- Constraints for dumped tables

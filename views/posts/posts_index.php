@@ -1,3 +1,6 @@
+
+<h1>Tere lugemist!</h1>
+
 <?foreach($posts as $post):?>
     <div class="span8">
         <h1><a href="<?=BASE_URL?>posts/view/<?=$post['post_id']?>"><?=$post['post_subject']?></a></h1>

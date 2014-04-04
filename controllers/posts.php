@@ -23,6 +23,7 @@ class posts extends Controller
     }
 
 
+
     function view()
     {
         $post_id = $this->params[0];
